@@ -1,0 +1,85 @@
+:Base Puffv101.hlp
+:Title Puff Help Index
+1 English
+2 Intro
+3 Main Menu=HID_MENU_E
+3 Features: why is this program different from the others?=HID_FEATURES_E
+3 What is steganography? Why should I need this technique?=HID_A_E
+3 What is authoring? Why should I need this technique?=HID_B_E
+2 Supported formats
+3 Supported formats in detail=HID_C_E
+3 Bmp=HID_C_BMP_E
+3 Jpg=HID_C_JPG_E
+3 Pcx=HID_C_PCX_E
+3 Png=HID_C_PNG_E
+3 Tga=HID_C_TGA_E
+3 Aiff=HID_C_AIFF_E
+3 Mp3=HID_C_MP3_E
+3 Next/Sun=HID_C_AU_E
+3 Wav=HID_C_WAV_E
+3 Win PE modules=HID_C_EXE_E
+2 Step by step Hiding explained
+3 Hiding Wizard Step 1=HID_HIDE1_E
+3 Hiding Wizard Step 2=HID_HIDE2_E
+3 Hiding Wizard Step 3=HID_HIDE3_E
+3 Hiding Wizard Step 4=HID_HIDE4_E
+3 Hiding Wizard Step 5=HID_HIDE5_E
+3 Last Step [Report]=HID_HIDE6_E
+2 Step by step Unhiding explained
+3 Unhiding Wizard Step 1=HID_UNHIDE1_E
+3 Unhiding Wizard Step 2=HID_UNHIDE2_E
+3 Unhiding Wizard Step 3=HID_UNHIDE3_E
+3 Last Step [Extraction]=HID_UNHIDE4_E
+2 Step by step Authoring explained
+3 Authoring Wizard Step 1=HID_AUTH1_E
+3 Authoring Wizard Step 2=HID_AUTH2_E
+3 Authoring Wizard Step 3=HID_AUTH3_E
+3 Last Step [Report]=HID_AUTH4_E
+2 Step by step Checking explained
+3 Checking Panel=HID_UNAUTH1_E
+2 Advanced Options
+3 Output format & bits selection level=HID_OPT_E
+2 Hints
+3 Suggestions for better results=HID_D_E
+
+1 Italiano
+2 Introduzione
+3 Menu Principale=HID_MENU_I
+3 Caratteristiche: perchè questo programma è differente dagli altri?=HID_FEATURES_I
+3 Cosa è la steganografia? Perchè dovrei averne bisogno?=HID_A_I
+3 Cosa è l'authoring? Perchè dovrei averne bisogno?=HID_B_I
+2 Formati supportati
+3 Formati supportati in dettaglio=HID_C_I
+3 Bmp=HID_C_BMP_I
+3 Jpg=HID_C_JPG_I
+3 Pcx=HID_C_PCX_I
+3 Png=HID_C_PNG_I
+3 Tga=HID_C_TGA_I
+3 Aiff=HID_C_AIFF_I
+3 Mp3=HID_C_MP3_I
+3 Next/Sun=HID_C_AU_I
+3 Wav=HID_C_WAV_I
+3 Moduli Win PE=HID_C_EXE_I
+2 Nascondere Dati in dettaglio
+3 Nascondere Dati Passo 1=HID_HIDE1_I
+3 Nascondere Dati Passo 2=HID_HIDE2_I
+3 Nascondere Dati Passo 3=HID_HIDE3_I
+3 Nascondere Dati Passo 4=HID_HIDE4_I
+3 Nascondere Dati Passo 5=HID_HIDE5_I
+3 Ultimo Passo [Rapporto]=HID_HIDE6_I
+2 Recupero Dati in dettaglio
+3 Recupero Dati Passo 1=HID_UNHIDE1_I
+3 Recupero Dati Passo 2=HID_UNHIDE2_I
+3 Recupero Dati Passo 3=HID_UNHIDE3_I
+3 Ultimo Passo [Estrazione]=HID_UNHIDE4_I
+2 Authoring in dettaglio
+3 Authoring Passo 1=HID_AUTH1_I
+3 Authoring Passo 2=HID_AUTH2_I
+3 Authoring Passo 3=HID_AUTH3_I
+3 Ultimo Passo [Rapporto]=HID_AUTH4_I
+2 Verifica in dettaglio
+3 Pannello Verifica=HID_UNAUTH1_I
+2 Opzioni Avanzate
+3 Formato di output & livello di selezione bit=HID_OPT_I
+2 Indicazioni
+3 Suggerimenti per risultati migliori=HID_D_I
