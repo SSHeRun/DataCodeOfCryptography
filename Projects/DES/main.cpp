@@ -102,6 +102,56 @@ bool CheckParse( int argc, char** argv )
 int main( int argc, char **argv )
 {
 	//! 在此处填写代码......
+	
+	int ReadFileLenth=0;//定义读入文件的长度
+	unsigned char *pBuffIn = NULL;//定义输入缓冲区指针
+	unsigned char *pBuffOut = NULL;//定义输出缓冲区指针
+	unsigned k1 = 0;//密钥低位
+	unsigned k2 = 0;//密钥高位
+	unsigned m1 = 0;//32位明文(左)
+	unsigned m2 = 0;//32位明文(右)
+	unsigned c1 = 0;//密文(左)
+	unsigned c2 = 0;//密文(右)
 
+	if(CheckParse(argc,argv)){
+	//校验输出参数是否正确
+		memcpy(&k1,argv[3],4);
+		memcpy(&k2,argv[3]+4,4);
+		//分割密钥为低位和高位
+		ReadFileLenth=FileIn(argv[2],pBuffIn);
+		//读入文件
+		if(ReadFileLenth%8!=0){//如果文件的长度不是8的倍数
+			for(int i=0;i<=8;i++){
+				if(*(pBuffIn+ReadFileLenth/8+i)==NULL){
+					*(pBuffIn+ReadFileLenth/8+i)=0;//补齐不足8字节的最末文件尾
+				}
+			}
+			ReadFileLenth=(ReadFileLenth/8+1)*8; 
+		}
+		if(argv[1][1]=='e'){
+			for(int i=0;i<ReadFileLenth/8;i++){
+				memcpy(&m1,pBuffIn+i*8,4);
+				memcpy(&m2,pBuffIn+i*8+4,4);
+				des_encrypt(k1,k2,m1,m2,c1,c2);//加密
+				memcpy(pBuffOut+i*8,&c1,4);
+				memcpy(pBuffOut+i*8+4,&c2,4);
+			}
+			FileOut(pBuffOut,ReadFileLenth,DECRYPT_FILE);
+		}else if(argv[1][1]=='d'){
+			for(int i=0;i<ReadFileLenth/8;i++){
+				memcpy(&c1,pBuffIn+i*8,4);
+				memcpy(&c2,pBuffIn+i*8+4,4);
+				des_decrypt(k1,k2,c1,c2,m1,m2);//解密
+				memcpy(pBuffOut+i*8,&m1,4);
+				memcpy(pBuffOut+i*8+4,&m2,4);
+			}
+			FileOut(pBuffOut,ReadFileLenth,ENCRYPT_FILE);
+		}else{
+			printf("参数输入错误\n");
+		}
+	}else{
+		printf("参数输入错误\n");
+	}
+	
 	return true;
 }
