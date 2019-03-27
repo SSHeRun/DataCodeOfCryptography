@@ -15,7 +15,7 @@
 #define DECRYPT_FILE "DES加密密文.txt"
 #define ENCRYPT_FILE "DES解密明文.txt"
 //! 约束文件最大2M
-#define MAX_FILE	1024*1024*2
+#define MAX_FILE	1024
 
 /******************************************************************************/
 //	名称：usage
@@ -91,6 +91,7 @@ bool CheckParse( int argc, char** argv )
 		(argv[1][1]!='e' && argv[1][1]!='d') ||
 		(strlen( argv[3] ) >(64/8) ) )
 	{
+
 		Usage( argv[0] );
 		return false;
 	}
@@ -104,15 +105,17 @@ int main( int argc, char **argv )
 	//! 在此处填写代码......
 	
 	int ReadFileLenth=0;//定义读入文件的长度
-	unsigned char *pBuffIn = NULL;//定义输入缓冲区指针
-	unsigned char *pBuffOut = NULL;//定义输出缓冲区指针
+	unsigned char bufferIN[MAX_FILE] = {0};//定义输入缓冲大小
+	unsigned char bufferOUT[MAX_FILE] = {0};//定义输出缓冲区大小
+	unsigned char *pBuffIn = bufferIN;//定义输入缓冲区指针
+	unsigned char *pBuffOut = bufferOUT;//定义输出缓冲区指针
+	
 	unsigned k1 = 0;//密钥低位
 	unsigned k2 = 0;//密钥高位
 	unsigned m1 = 0;//32位明文(左)
 	unsigned m2 = 0;//32位明文(右)
 	unsigned c1 = 0;//密文(左)
 	unsigned c2 = 0;//密文(右)
-
 	if(CheckParse(argc,argv)){
 	//校验输出参数是否正确
 		memcpy(&k1,argv[3],4);
@@ -152,6 +155,5 @@ int main( int argc, char **argv )
 	}else{
 		printf("参数输入错误\n");
 	}
-	
 	return true;
 }
